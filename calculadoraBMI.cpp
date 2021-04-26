@@ -1,5 +1,4 @@
 #include<iostream>
-
 using namespace std;
 
 int main(){
@@ -23,9 +22,7 @@ int main(){
      }
     else{
          cout<<"Obeso"<<endl;
-     }
-
-
-
+    }
+    
     return 0;
 }
