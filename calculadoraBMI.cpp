@@ -23,6 +23,5 @@ int main(){
     else{
          cout<<"Obeso"<<endl;
     }
-
     return 0;
 }
