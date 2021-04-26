@@ -20,7 +20,7 @@ int main(){
      else if(bmi<30){
          cout<<"Sobrepeso"<<endl;
      }
-    else{
+    else if(bmi>=30){
          cout<<"Obeso"<<endl;
     }
     
