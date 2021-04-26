@@ -3,6 +3,7 @@ using namespace std;
 
 int main(){
      double peso,altura,bmi;
+     
      cout<<"CALCULADORA DE INDICE DE MASA CORPORAL\n"<<endl;
      cout<<"Ingrese el peso en kg: ";
      cin>>peso;
