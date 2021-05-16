@@ -35,7 +35,7 @@ int main(){
              cout<<"Resultado: Ganó Equipo 2"<<endl;
           }
     }
-     cout<<"\nPuntaje final "<<endl<<"Equipo 1 = "<<puntosEquipo1<<endl<<"Equipo 2 = "<<puntosEquipo2<<endl;
+    cout<<"\nPuntaje final "<<endl<<"Equipo 1 = "<<puntosEquipo1<<endl<<"Equipo 2 = "<<puntosEquipo2<<endl;
      
      
      while(puntosEquipo1==puntosEquipo2){
