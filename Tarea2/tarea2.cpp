@@ -5,13 +5,11 @@
 using namespace std;
 
 int main(){
-    double aleatorio=0;
     srand (time(NULL));
  
     int partidosPendientes =0;
     int golesEquipo1, golesEquipo2;
-    int i = 0;
-    int puntosEquipo1=6;
+    int puntosEquipo1=8;
     int puntosEquipo2=6;
 
     cout<<"Puntaje inicial de los equipos "<<endl;
