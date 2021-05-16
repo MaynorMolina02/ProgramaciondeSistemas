@@ -1,6 +1,6 @@
 #include <iostream>
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
+#include <stdlib.h>     
+#include <time.h>      
 
 using namespace std;
 
@@ -16,7 +16,7 @@ int main(){
 
     cout<<"Ingrese numero de partidos pendientes: ";
     cin>>partidosPendientes;
-    // partidosPendientes = 3;
+    
     cout<<"Puntaje inicial de los equipos "<<endl;
     cout<<"Equipo 1 = "<<puntosEquipo1<<endl<<"Equipo 2 = "<<puntosEquipo2<<endl;
     while(i<partidosPendientes){
