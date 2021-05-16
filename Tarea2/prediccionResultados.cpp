@@ -9,7 +9,7 @@ int main(){
  
     int partidosPendientes =0;
     int golesEquipo1, golesEquipo2;
-    int puntosEquipo1=8;
+    int puntosEquipo1=6;
     int puntosEquipo2=6;
 
     cout<<"Puntaje inicial de los equipos "<<endl;
