@@ -19,11 +19,10 @@ int main(){
 	cout<<"Ingrese número de partidos pendientes: ";
     cin>>partidosPendientes;
     
-    while(i<partidosPendientes){
+    for(int i=0; i<partidosPendientes; i++){
           golesEquipo1= rand() % 10;
           golesEquipo2= rand() % 10;
-          cout<<endl<<i+1<<". Goles Partido => ";
-          cout<<"Equipo1="<<golesEquipo1<<" Equipo2="<<golesEquipo2<<endl;
+          cout<<endl<<i+1<<". Goles Partido => "<<"Equipo1="<<golesEquipo1<<" Equipo2="<<golesEquipo2<<endl;
           if(golesEquipo1 > golesEquipo2){
               puntosEquipo1 +=3;
               cout<<"Resultado: Ganó Equipo 1"<<endl;
@@ -37,16 +36,14 @@ int main(){
               puntosEquipo2 +=3;
              cout<<"Resultado: Ganó Equipo 2"<<endl;
           }
-         
-        i++;
     }
      cout<<"\nPuntaje final "<<endl<<"Equipo 1 = "<<puntosEquipo1<<endl<<"Equipo 2 = "<<puntosEquipo2<<endl;
+     
      
      while(puntosEquipo1==puntosEquipo2){
     	  golesEquipo1= rand() % 10;
           golesEquipo2= rand() % 10;
-          cout<<endl<<" Goles Partido => ";
-          cout<<"Equipo1="<<golesEquipo1<<" Equipo2="<<golesEquipo2<<endl;
+          cout<<endl<<"Goles Partido => "<<"Equipo1="<<golesEquipo1<<" Equipo2="<<golesEquipo2<<endl;
           if(golesEquipo1 > golesEquipo2){
               puntosEquipo1 +=3;
               cout<<"Resultado: Ganó Equipo 1"<<endl;
