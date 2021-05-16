@@ -41,10 +41,33 @@ int main(){
         i++;
     }
      cout<<"\nPuntaje final "<<endl<<"Equipo 1 = "<<puntosEquipo1<<endl<<"Equipo 2 = "<<puntosEquipo2<<endl;
+     
+     while(puntosEquipo1==puntosEquipo2){
+    	  golesEquipo1= rand() % 10;
+          golesEquipo2= rand() % 10;
+          cout<<endl<<" Goles Partido => ";
+          cout<<"Equipo1="<<golesEquipo1<<" Equipo2="<<golesEquipo2<<endl;
+          if(golesEquipo1 > golesEquipo2){
+              puntosEquipo1 +=3;
+              cout<<"Resultado: Ganó Equipo 1"<<endl;
+          }
+          else if (golesEquipo1 == golesEquipo2){
+              puntosEquipo1 +=1;
+              puntosEquipo2 +=1;
+             cout<<"Resultado: Empate"<<endl;
+          }
+          else if (golesEquipo1 < golesEquipo2){
+              puntosEquipo2 +=3;
+             cout<<"Resultado: Ganó Equipo 2"<<endl;
+          }
+           cout<<"\nPuntaje final "<<endl<<"Equipo 1 = "<<puntosEquipo1<<endl<<"Equipo 2 = "<<puntosEquipo2<<endl;
+		}
+	
+	 
     if(puntosEquipo1 > puntosEquipo2){
         cout<<"EL CAMPEÓN ES EL EQUIPO 1"<<endl;
     }
-    else
+    else  if(puntosEquipo2 > puntosEquipo1)
         cout<<"EL CAMPEÓN ES EL EQUIPO 2"<<endl;
     
     
