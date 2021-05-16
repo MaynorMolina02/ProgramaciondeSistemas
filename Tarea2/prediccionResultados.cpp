@@ -37,7 +37,7 @@ int main(){
     cout<<"\nPuntaje final "<<endl<<"Equipo 1 = "<<puntosEquipo1<<endl<<"Equipo 2 = "<<puntosEquipo2<<endl;
      
      
-     while(puntosEquipo1==puntosEquipo2){
+    while(puntosEquipo1==puntosEquipo2){
     	  golesEquipo1= rand() % 10;
           golesEquipo2= rand() % 10;
           cout<<endl<<"Goles Partido => "<<"Equipo1="<<golesEquipo1<<" Equipo2="<<golesEquipo2<<endl;
