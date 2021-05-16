@@ -6,7 +6,6 @@ using namespace std;
 
 int main(){
     srand (time(NULL));
- 
     int partidosPendientes =0;
     int golesEquipo1, golesEquipo2;
     int puntosEquipo1=6;
