@@ -1,14 +1,14 @@
 // C++ code
 //
 int num = 0;
-int push1=2;
-int push2=3;
+int incrementar=2;
+int decrementar=3;
 int ledRojo=5;
 int ledVerde=4;
 void setup()
 {
-  pinMode(push1, INPUT);
-  pinMode(push2, INPUT);
+  pinMode(incrementar, INPUT);
+  pinMode(decrementar, INPUT);
   pinMode(ledRojo, OUTPUT);
   pinMode(ledVerde, OUTPUT);
   Serial.begin(9600);
@@ -18,13 +18,13 @@ void loop()
 {
   Serial.print("Numero: ");
   Serial.println(num);
-  if(digitalRead(push1)){
+  if(digitalRead(incrementar)){
      num++;
      digitalWrite(ledVerde, HIGH);
      delay(100); 
      digitalWrite(ledVerde, LOW);
   }
-  if(digitalRead(push2)){
+  if(digitalRead(decrementar)){
      num--;
      digitalWrite(ledRojo, HIGH);
      delay(100); 
