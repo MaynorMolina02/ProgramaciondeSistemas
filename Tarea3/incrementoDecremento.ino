@@ -18,13 +18,13 @@ void loop()
 {
   Serial.print("Numero: ");
   Serial.println(num);
-  if(digitalRead(push1)==1){
+  if(digitalRead(push1)){
      num++;
      digitalWrite(ledVerde, HIGH);
      delay(100); 
      digitalWrite(ledVerde, LOW);
   }
-  if(digitalRead(push2)==1){
+  if(digitalRead(push2)){
      num--;
      digitalWrite(ledRojo, HIGH);
      delay(100); 
