@@ -79,7 +79,6 @@ dist = proximidad.DistanciaCm();
      luzAmarilla.onOff(0);
     }
     luzRoja.onOff(1);
-    delay(15000);
     luzVerde.onOff(0);
   
   }else{
@@ -91,7 +90,6 @@ dist = proximidad.DistanciaCm();
      luzAmarilla.onOff(0);
     }
     luzVerde.onOff(1);
-    delay(15000);
   }
   
   
