@@ -52,6 +52,8 @@ LED luzAmarilla(7);
 LED luzRoja(9);
 SENSOR proximidad(13,12);
 int dist = 0;
+int i=0;
+int a =0;
 void setup()
 {
   Serial.begin(9600);
@@ -66,13 +68,30 @@ void loop()
   //80%  0 - 268cm
   
  Serial.println(dist);
+   Serial.println(i);
+  
 dist = proximidad.DistanciaCm();
   if(dist > 301.4){
-  luzRoja.onOff(1);
+    i = i +1;
+    if(i==1){
+      luzAmarilla.onOff(1);
+    delay(1000);
+     luzAmarilla.onOff(0);
+    }
+    luzRoja.onOff(1);
     luzVerde.onOff(0);
-    //delay(3000);
+  
   }else{
+    a = a +1;
+      luzRoja.onOff(0);
+    if(a==1){
+      luzAmarilla.onOff(1);
+    delay(1000);
+     luzAmarilla.onOff(0);
+    }
     luzVerde.onOff(1);
-    luzRoja.onOff(0);
+   
   }
+  
+  
 }
