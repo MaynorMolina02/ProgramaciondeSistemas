@@ -77,8 +77,6 @@ void setup()
 //LED Roja tanque vacio
 //LED amarilla ingresando agua
 //LED azul consumiendo agua
-
-  
 void loop()
 {
  int valor = serv.read();
@@ -127,5 +125,6 @@ void loop()
        buz1.onOff(0);
     }
 }
-  }   
+  
+ }   
 }
