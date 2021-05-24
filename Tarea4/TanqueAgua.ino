@@ -1,3 +1,4 @@
+#include <Servo.h>
 class LED{
   public:
   LED(byte puerto){
@@ -53,10 +54,10 @@ class BUZZER{
          byte pin;
 };
 
-//LED VERDE tanque lleno
-//LED Roja tanque vacio
-//LED amarilla ingresando agua
-//LED azul consumiendo agua 
+//Led Verde lleno
+//Led Roja vacio
+//Led amarilla ingresando agua
+//Led azul consumiendo agua 
 LED luzVerde(10);
 LED luzRoja(8);
 LED luzAmarilla(12);
@@ -76,7 +77,7 @@ void setup()
   serv.write(0);
   Serial.begin(9600);
 }
-
+  
 void loop()
 {
  int valor = serv.read();
@@ -105,26 +106,25 @@ void loop()
    }
   }else{
   if(consumir.leer()){
-      if(valor>min){
-        luzAmarilla.onOff(0);
-        luzRoja.onOff(0);
-        luzAzul.onOff(1);
-        delay(100);
-        luzAzul.onOff(0);
-        luzVerde.onOff(0);
-        //Consumiendo agua
-        serv.write(valor-20);
-    }else{
-      Serial.println("TANQUE VACIO");
-       luzAmarilla.onOff(0);
-        luzRoja.onOff(1);
-        luzAzul.onOff(0);
-        luzVerde.onOff(0);
-       buz1.onOff(1);
-       delay(1000);
-       buz1.onOff(0);
-    }
+    if(valor>min){
+      luzAmarilla.onOff(0);
+      luzRoja.onOff(0);
+      luzAzul.onOff(1);
+      delay(100);
+      luzAzul.onOff(0);
+      luzVerde.onOff(0);
+      //Consumiendo agua
+      serv.write(valor-20);
+  }else{
+    Serial.println("TANQUE VACIO");
+     luzAmarilla.onOff(0);
+      luzRoja.onOff(1);
+      luzAzul.onOff(0);
+      luzVerde.onOff(0);
+     buz1.onOff(1);
+     delay(1000);
+     buz1.onOff(0);
+  }
 }
-  
- }   
+  }   
 }
