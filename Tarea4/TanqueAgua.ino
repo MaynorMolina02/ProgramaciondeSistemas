@@ -53,7 +53,10 @@ class BUZZER{
          byte pin;
 };
 
-  
+//LED VERDE tanque lleno
+//LED Roja tanque vacio
+//LED amarilla ingresando agua
+//LED azul consumiendo agua 
 LED luzVerde(10);
 LED luzRoja(8);
 LED luzAmarilla(12);
@@ -73,10 +76,7 @@ void setup()
   serv.write(0);
   Serial.begin(9600);
 }
-//LED VERDE tanque lleno
-//LED Roja tanque vacio
-//LED amarilla ingresando agua
-//LED azul consumiendo agua
+
 void loop()
 {
  int valor = serv.read();
