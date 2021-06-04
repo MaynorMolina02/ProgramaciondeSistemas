@@ -83,7 +83,7 @@ int main(){
     while(op!=4){
     cout<<"-----Menu-----"<<endl;
     cout<<"1. Hotel"<<endl;
-    cout<<"2. Aopartamentos"<<endl;
+    cout<<"2. Apartamentos"<<endl;
     cout<<"3. AirBnb"<<endl;
     cout<<"4. Salir"<<endl;
     cout<<"Elija el lugar donde quiere hospedarse: ";
