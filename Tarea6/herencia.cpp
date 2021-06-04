@@ -76,7 +76,7 @@ class AirBnb: public Hospedaje{
 
 int main(){
 
-    Hoteles hotel(100,2,3,"Almuerzo");
+    Hoteles hotel(100,2,3,"Cena");
     cout<<"Costo de reservar en hotel: "<<hotel.calcularCostos()<<endl;
 
     Apartamentos apart(2500,2);
