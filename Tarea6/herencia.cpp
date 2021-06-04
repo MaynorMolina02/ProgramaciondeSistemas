@@ -17,7 +17,7 @@ public:
 
 class Hoteles: public Hospedaje{
    public:
-          Hoteles(int _costo,int _habitaciones, int _dias,string _comida): Hospedaje(_costo){
+          Hoteles(int _costo,int _habitaciones, int _dias,int _comida): Hospedaje(_costo){
            numHabitaciones = _habitaciones;
            servicioComida = _comida;
            dias = _dias;
@@ -26,12 +26,15 @@ class Hoteles: public Hospedaje{
        int calcularCostos(){
               int costos = 0;
               costos = obtenerCosto() * numHabitaciones * dias;
-              if(servicioComida == "Almuerzo"){
-                costos +=100;
-              }else  if(servicioComida == "Desayuno"){
-                costos +=50;
-              }else  if(servicioComida == "Cena"){
-                costos +=80;
+              if(servicioComida == 1){
+                costos +=50 * dias;
+              }else  if(servicioComida == 2){
+                costos +=100 * dias;
+              }else  if(servicioComida == 3){
+                costos +=80 * dias;
+              }
+              else  if(servicioComida == 4){
+                costos +=230 * dias;
               }
               return costos;
        }
@@ -39,7 +42,7 @@ class Hoteles: public Hospedaje{
    private:
           int numHabitaciones;
           int dias;
-          string servicioComida;
+          int servicioComida;
 
 };
 
@@ -75,17 +78,50 @@ class AirBnb: public Hospedaje{
 
 
 int main(){
+    int op = 0;
 
-    Hoteles hotel(100,2,3,"Cena");
-    cout<<"Costo de reservar en hotel: "<<hotel.calcularCostos()<<endl;
+    while(op!=4){
+    cout<<"Menu "<<endl;
+    cout<<"1. Hotel"<<endl;
+    cout<<"2. Aopartamentos"<<endl;
+    cout<<"3. AirBnb"<<endl;
+    cout<<"4. Salir"<<endl;
+    cout<<"Elija el lugar donde quiere hospedarse: ";
+    cin>>op;
 
-    Apartamentos apart(2500,2);
-    cout<<"Costo de reservar en apartamento: "<<apart.calcularCostos()<<endl;
-
-    AirBnb air(1000,4);
-    cout<<"Costo de reservar en AirBnb por persona: "<<air.calcularCostos()<<endl;
-
-
+    if(op==1){
+	
+           int hab, dias;
+           int comida;
+           cout<<"Ingrese el numero de habitaciones: ";
+           cin>> hab;
+           cout<<"Ingrese los dias: ";
+           cin>> dias;
+           cout<<"Ingrese el servicio de commida (1.Desayuno,2.Almuerzo,3.Cena,4.Todos): ";
+           cin>> comida;
+           int costoHotel = 100;
+           Hoteles hotel(costoHotel,hab,dias,comida);
+           cout<<"Costo de reservar en hotel: "<<hotel.calcularCostos()<<endl;
+          }else
+          if(op==2){
+		  
+             int meses;
+             cout<<"Ingrese los meses: ";
+             cin>> meses;
+             int costoApartamento = 2500;
+             Apartamentos apart(costoApartamento,meses);
+             cout<<"Costo de reservar en apartamento: "<<apart.calcularCostos()<<endl;
+           }else
+           if(op==3){
+             int personas;
+             cout<<"Ingrese el numero de personas: ";
+             cin>>personas;
+             int costoHab= 1000;
+              AirBnb air(costoHab,personas);
+              cout<<"Costo de reservar en AirBnb por persona: "<<air.calcularCostos()<<endl;
+           }
+        cout<<endl;
+}
     return 0;
 
 }
