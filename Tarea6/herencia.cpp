@@ -17,14 +17,15 @@ public:
 
 class Hoteles: public Hospedaje{
    public:
-          Hoteles(int _costo,string _habitaciones,string _comida): Hospedaje(_costo){
+          Hoteles(int _costo,int _habitaciones, int _dias,string _comida): Hospedaje(_costo){
            numHabitaciones = _habitaciones;
            servicioComida = _comida;
+           dias = _dias;
           }
 
        int calcularCostos(){
               int costos = 0;
-              costos = obtenerCosto() * numHabitaciones;
+              costos = obtenerCosto() * numHabitaciones * dias;
               if(servicioComida == "Almuerzo"){
                 costos +=100;
               }else  if(servicioComida == "Desayuno"){
@@ -36,20 +37,25 @@ class Hoteles: public Hospedaje{
        }
 
    private:
-   //desayuno, almuerzo y cena
           int numHabitaciones;
+          int dias;
           string servicioComida;
 
 };
 
 class Apartamentos: public Hospedaje{
   public:
-         Apartamentos(int _costo, int _tiempoRenta):Hospedaje(_costo){
-             tiempoRenta = _tiempoRenta;
+         Apartamentos(int _costo, int _mesesRenta):Hospedaje(_costo){
+             mesesRenta = _mesesRenta;
          }
+
+
+       int calcularCostos(){
+              return obtenerCosto() * mesesRenta;
+       }
+
   private:
-         //rentarse mau
-         int tiempoRenta;
+         int mesesRenta;
 };
 
 class AirBnb: public Hospedaje{
@@ -58,6 +64,10 @@ class AirBnb: public Hospedaje{
            numPersonas = _personas;
           }
 
+          int calcularCostos(){
+              return obtenerCosto() / numPersonas;
+       }
+
    private:
         int numPersonas;
 };
@@ -65,7 +75,17 @@ class AirBnb: public Hospedaje{
 
 
 int main(){
-    Hoteles hotel(100,2."Almuerz0");
+
+    Hoteles hotel(100,2,3,"Almuerzo");
+    cout<<"Costo de reservar en hotel: "<<hotel.calcularCostos()<<endl;
+
+    Apartamentos apart(2500,2);
+    cout<<"Costo de reservar en apartamento: "<<apart.calcularCostos()<<endl;
+
+    AirBnb air(1000,4);
+    cout<<"Costo de reservar en AirBnb por persona: "<<air.calcularCostos()<<endl;
+
 
     return 0;
-}_
+
+}
