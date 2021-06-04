@@ -1,7 +1,7 @@
 #include<iostream>
 
 using namespace std;
-//calcular costos por Noche
+
 class Hospedaje{
 public:
       Hospedaje(int _costo){
