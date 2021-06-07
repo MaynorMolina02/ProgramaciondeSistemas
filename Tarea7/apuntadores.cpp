@@ -13,15 +13,27 @@ void mostrarFechaHora (int anio, int mes, int dia, int hora, int minuto){
         else
         cout<<"Minutos incorrectos";
       }
+      else
+          cout<<"Hora incorrecta";
   }
    else
    cout<<"Mes incorrecto";
 }
 
+int longitudCadena(char *cadena){
+    int t = 0;
+    while(*cadena != '\0'){
+     t++;
+     *cadena++;
+    }
+     return t;
+}
+
 int main(){
   
- mostrarFechaHora(2016,13,15,13,30);
-
+ mostrarFechaHora(2016,11,15,7,50);
+ char c[40] = "CadenaPrueba";
+ cout<<"Tamano de cadena: "<<longitudCadena(c)<<endl;
 
     return 0;
 }
