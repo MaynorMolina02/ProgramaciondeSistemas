@@ -84,7 +84,8 @@ void mostrarFechaHora (int anio, int mes, int dia, int hora, int minuto){
             j++;
          }
           fecha[j] =':';
-        j++;
+          j++;
+
           while(*min != '\0'){
             fecha[j] = *min++;
             j++;
@@ -97,7 +98,7 @@ void mostrarFechaHora (int anio, int mes, int dia, int hora, int minuto){
       }
       else
           cout<<"Hora incorrecta"<<endl;
-            }
+     }
    else
    cout<<"Dia incorrecto"<<endl;
   }
@@ -114,5 +115,5 @@ int main(){
  char c[40] = "Cadena de prueba";
  cout<<"El tamano de la cadena '"<<c<<"' es: "<<longitudCadena(c)<<endl;
 
-    return 0;
+return 0;
 }
