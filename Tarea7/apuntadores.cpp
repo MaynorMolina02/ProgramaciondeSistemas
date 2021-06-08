@@ -5,6 +5,15 @@
 
 using namespace std;
 
+int longitudCadena(char *cadena){
+    int t = 0;
+    while(*cadena != '\0'){
+     t++;
+     *cadena++;
+    }
+     return t;
+}
+
 void mostrarFechaHora (int anio, int mes, int dia, int hora, int minuto){
   string m[12] = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
                   "agosto", "septiembre", "octubre", "noviembre", "diciembre"};
@@ -21,15 +30,57 @@ void mostrarFechaHora (int anio, int mes, int dia, int hora, int minuto){
           char anioC[5];
           itoa(anio,anioC,10);
 
-        cout<<dia<<" de "<<m[mes-1]<<" de "<< anio <<", "<<hora<<":"<<minuto<<endl;
-         char fecha[300];
-         fecha[0] = diaC[0];
-         fecha[1] = diaC[1];
-         fecha[2] = 'd';
-        fecha[3] = 'e';
-         fecha[4] = mesF[0];
-         fecha[5] =  mesF[1];
+            char horaC[3];
+          itoa(hora,horaC,10);
 
+            char minutoC[3];
+          itoa(minuto,minutoC,10);
+
+        cout<<dia<<" de "<<m[mes-1]<<" de "<< anio <<", "<<hora<<":"<<minuto<<endl;
+         char fecha[90];
+ 
+         
+         int j=0;
+         int i=0;
+
+         for(i=0; i<longitudCadena(diaC); i++){
+            fecha[j] = diaC[i];
+            j++;
+         }
+         fecha[j] =' ';
+         fecha[j+1] = 'd';
+         fecha[j+2] = 'e';
+         fecha[j+3] = ' ';
+
+         j+=4;
+         for(i=0; i<longitudCadena(mesF); i++){
+            fecha[j] = mesF[i];
+            j++;
+         }
+            fecha[j] =' ';
+         fecha[j+1] = 'd';
+         fecha[j+2] = 'e';
+         fecha[j+3] = ' ';
+
+         j+=4;
+          for(i=0; i<longitudCadena(anioC); i++){
+            fecha[j] = anioC[i];
+            j++;
+         }
+
+         fecha[j] = ',';
+         fecha[j+1] = ' ';
+         j+=2;
+          for(i=0; i<longitudCadena(horaC); i++){
+            fecha[j] = horaC[i];
+            j++;
+         }
+          fecha[j] =':';
+        j++;
+          for(i=0; i<longitudCadena(minutoC); i++){
+            fecha[j] = minutoC[i];
+            j++;
+         }
 
          cout<<fecha<<endl;
        }
@@ -43,14 +94,7 @@ void mostrarFechaHora (int anio, int mes, int dia, int hora, int minuto){
    cout<<"Mes incorrecto";
 }
 
-int longitudCadena(char *cadena){
-    int t = 0;
-    while(*cadena != '\0'){
-     t++;
-     *cadena++;
-    }
-     return t;
-}
+
 
 int main(){
   
