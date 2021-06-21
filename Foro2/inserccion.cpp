@@ -13,7 +13,7 @@ int main()
 {
 int n;
 struct ordenamiento orden[MAX];
-cout<<"Ingrese limite del arreglo:";
+cout<<"Ingrese dimension del arreglo:";
 cin>>n;
 leerarray(n,orden);
 insercion (n,orden);
