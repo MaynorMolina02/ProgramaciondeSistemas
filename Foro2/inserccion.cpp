@@ -9,9 +9,8 @@ void leerarray(int,struct ordenamiento []);
 void insercion (int,struct ordenamiento []);
 void muestra (int,struct ordenamiento []);
 
-int main()
-{
-int n;
+int main(){
+    int n;
 struct ordenamiento orden[MAX];
 cout<<"Ingrese dimension del arreglo:";
 cin>>n;
