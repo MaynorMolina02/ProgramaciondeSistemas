@@ -1,6 +1,5 @@
 #include<iostream>
 #include<conio.h>
-
 using namespace std;
 int Arreglo[100];
 void LeerArreglo(int Numero);
